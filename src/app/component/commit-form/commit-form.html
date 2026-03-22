@@ -1,1 +1,18 @@
-<p>commit-form works!</p>
+<section class="commit-editor">
+  <h2>Editor de Commit</h2>
+
+  <div class="field"> 
+    <label for="subject">Asunto del Commit:</label>
+    <input
+      type="text"
+      id="subject"
+      placeholder="Ej: add login validation"
+      (input)="onSubjectChange($event)"
+    >
+  </div>
+
+  <div class="preview">
+    <h3>Vista Previa:</h3>
+    <code>git commit -m "{{ subject }}"</code>
+  </div>
+</section>
