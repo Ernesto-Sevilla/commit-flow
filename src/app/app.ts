@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommitForm } from "./component/commit-form/commit-form";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommitForm],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
