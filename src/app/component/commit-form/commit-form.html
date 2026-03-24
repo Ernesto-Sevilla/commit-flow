@@ -2,6 +2,15 @@
   <h2>Editor de Commit</h2>
 
   <div class="field"> 
+    <label for="type">Tipo de cambio:</label>
+    <select id="type" (change)="onTypeChange($event)">
+      @for (type of commitTypes; track type){
+        <option [value]="type">{{ type }}</option>
+      }
+    </select>
+  </div>
+  <br>
+  <div>
     <label for="subject">Asunto del Commit:</label>
     <input
       type="text"
@@ -13,6 +22,6 @@
 
   <div class="preview">
     <h3>Vista Previa:</h3>
-    <code>git commit -m "{{ subject }}"</code>
+    <code>git commit -m "{{ selectedType }}: {{ subject }}"</code>
   </div>
 </section>

@@ -8,8 +8,15 @@ import { Component } from '@angular/core';
 })
 export class CommitForm {
   subject: string = '';
+  selectedType: string = 'feat';
 
-  onSubjectChange(event: any) {
+  commitTypes: string[] = ['feat', 'fix', 'docs', 'style', 'refactor', 'chore', 'test'];
+
+    onSubjectChange(event: any) {
     this.subject = event.target.value;
+  }
+
+  onTypeChange(event: any) {
+    this.selectedType = event.target.value;
   }
 }
