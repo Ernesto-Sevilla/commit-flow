@@ -5,11 +5,12 @@ $accent-color: #3fb950;
 $border-color: #444;
 $code-param-color: #d63384;
 
-* {
-  box-sizing: border-box;
-}
-
+/* --- Main Container Styles --- */
 .commit-editor {
+
+  /* Box-sizing is set to border-box to include padding in width calculations */
+  box-sizing: border-box;
+
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;
@@ -42,6 +43,7 @@ $code-param-color: #d63384;
       color: #dddddd;
     }
 
+    /* --- Interactive Element --- */
     input, select{
       width: 100%;
       padding: 12px 14px;
