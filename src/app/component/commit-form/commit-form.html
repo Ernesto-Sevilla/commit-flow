@@ -1,5 +1,5 @@
 <section class="commit-editor">
-  <h2>Editor de Commit</h2>
+  <h2>CommitFlow Editor</h2>
 
   <div class="field"> 
     <label for="type">Tipo de cambio:</label>
@@ -9,8 +9,7 @@
       }
     </select>
   </div>
-  <br>
-  <div>
+  <div class="field">
     <label for="subject">Asunto del Commit:</label>
     <input
       type="text"
@@ -22,6 +21,9 @@
 
   <div class="preview">
     <h3>Vista Previa:</h3>
-    <code>git commit -m "{{ selectedType }}: {{ subject }}"</code>
+    <code>git commit -m 
+      "<span class="code-param">{{ selectedType }}</span>"
+      <span class="code-param">{{ subject }}</span>
+    </code>
   </div>
 </section>
