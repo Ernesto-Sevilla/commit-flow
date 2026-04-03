@@ -34,4 +34,18 @@ export class CommitForm {
   onTypeChange(event: any) {
     this.selectedType = event.target.value;
   }
+
+  copyToClipboard(): void {
+
+    const command = `git commit -m "${this.selectedType}: ${this.subject}"`;
+  
+    navigator.clipboard.writeText(command).then(() => {
+      console.log("Command copied to clipboard");
+      alert("¡Copiado al portapapeles");
+    }).catch(err => {
+      console.error("Could not copy text: ", err);
+    })
+  }
 }
+
+;

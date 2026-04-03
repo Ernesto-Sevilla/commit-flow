@@ -44,7 +44,8 @@ $code-param-color: #d63384;
     }
 
     /* --- Interactive Element --- */
-    input, select{
+    input,
+    select {
       width: 100%;
       padding: 12px 14px;
       background-color: #161b22 !important;
@@ -96,6 +97,30 @@ $code-param-color: #d63384;
         color: $code-param-color;
         font-weight: bold;
       }
+    }
+  }
+
+  .copy-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #0d1117; // El fondo oscuro de tu app
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.98); // Efecto de "clic" físico
     }
   }
 }

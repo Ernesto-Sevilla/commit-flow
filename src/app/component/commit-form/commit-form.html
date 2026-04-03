@@ -1,29 +1,30 @@
 <section class="commit-editor">
   <h2>CommitFlow Editor</h2>
 
-  <div class="field"> 
+  <div class="field">
     <label for="type">Tipo de cambio:</label>
     <select id="type" (change)="onTypeChange($event)">
       @for (type of commitTypes; track type){
-        <option [value]="type">{{ type }}</option>
+      <option [value]="type">{{ type }}</option>
       }
     </select>
   </div>
   <div class="field">
     <label for="subject">Asunto del Commit:</label>
-    <input
-      type="text"
-      id="subject"
-      placeholder="Ej: add login validation"
-      (input)="onSubjectChange($event)"
-    >
+    <input type="text" id="subject" placeholder="Ej: add login validation" (input)="onSubjectChange($event)">
   </div>
 
-  <div class="preview">
-    <h3>Vista Previa:</h3>
-    <code>git commit -m 
-      "<span class="code-param">{{ selectedType }}</span>"
-      <span class="code-param">{{ subject }}</span>
+  <div class="field preview-container">
+    <div class="preview">
+      <h3>Vista Previa:</h3>
+      <code>git commit -m 
+      "<span class="code-param">{{ selectedType }}: </span>
+      <span class="code-param">{{ subject }}</span>"
     </code>
+
+      <button class="copy-btn" (click)="copyToClipboard()">
+        Copiar comando
+      </button>
+    </div>
   </div>
 </section>
