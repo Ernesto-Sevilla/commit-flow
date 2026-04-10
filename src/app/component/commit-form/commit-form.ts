@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Main editor component for CommitFlow.
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-commit-form',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './commit-form.html',
   styleUrl: './commit-form.scss',
 })
