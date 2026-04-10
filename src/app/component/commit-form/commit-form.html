@@ -28,7 +28,9 @@
   <div class="field preview-container">
     <div class="preview">
       <h3>Vista Previa:</h3>
-      <code>{{ fullComand }}</code>
+      <code>
+        <span class="code-base">git commit -m "</span><span class="code-highlight">{{ selectedType }}@if(scope.trim()){({{ scope.trim() }})}</span><span class="code-base">: {{ subject }}"</span>
+      </code>
 
       <button class="copy-btn" (click)="copyToClipboard()">
         Copiar comando

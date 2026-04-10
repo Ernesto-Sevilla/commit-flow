@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgIf } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 
 /**
  * Main editor component for CommitFlow.

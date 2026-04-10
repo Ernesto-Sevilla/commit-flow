@@ -98,9 +98,13 @@ $code-param-color: #d63384;
       padding: 15px;
       border-radius: 4px;
 
-      .code-param {
-        color: $code-param-color;
-        font-weight: bold;
+      .code-base {
+        color: #2aff31;
+      }
+
+      .code-highlight {
+        color: #c9a04e; // Un cian relajante que resalta sin molestar
+        font-weight: 500;
       }
     }
   }
