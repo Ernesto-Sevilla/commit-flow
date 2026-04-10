@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { NgIf } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 
 /**
  * Main editor component for CommitFlow.
@@ -6,13 +8,15 @@ import { Component } from '@angular/core';
  */
 @Component({
   selector: 'app-commit-form',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './commit-form.html',
   styleUrl: './commit-form.scss',
 })
 export class CommitForm {
   // Holds the user-provide commit description
   subject: string = '';
+
+  scope: string = '';
 
   // Default commit type based on Conventional Commits standard
   selectedType: string = 'feat';
@@ -35,11 +39,14 @@ export class CommitForm {
     this.selectedType = event.target.value;
   }
 
-  copyToClipboard(): void {
+  get fullComand(): string {
+    const scopePart = this.scope.trim() ? `(${this.scope.trim()})` : '';
+    return  `git commit -m "${this.selectedType}${scopePart}: ${this.subject}"`;
+  }
 
-    const command = `git commit -m "${this.selectedType}: ${this.subject}"`;
+  copyToClipboard(): void {
   
-    navigator.clipboard.writeText(command).then(() => {
+    navigator.clipboard.writeText(this.fullComand).then(() => {
       console.log("Command copied to clipboard");
       alert("¡Copiado al portapapeles");
     }).catch(err => {

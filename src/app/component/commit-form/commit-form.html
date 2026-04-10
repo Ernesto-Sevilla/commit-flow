@@ -9,6 +9,17 @@
       }
     </select>
   </div>
+
+  <div class="field">
+    <label for="scope">Scope (Optional module):</label>
+    <input 
+      type="text" 
+      id="scope" 
+      [(ngModel)]="scope" 
+      placeholder="e.g., auth, ui, api..."
+    >
+  </div>
+
   <div class="field">
     <label for="subject">Asunto del Commit:</label>
     <input type="text" id="subject" placeholder="Ej: add login validation" (input)="onSubjectChange($event)">
@@ -17,10 +28,9 @@
   <div class="field preview-container">
     <div class="preview">
       <h3>Vista Previa:</h3>
-      <code>git commit -m 
-      "<span class="code-param">{{ selectedType }}: </span>
-      <span class="code-param">{{ subject }}</span>"
-    </code>
+      <code>
+        <span class="code-base">git commit -m "</span><span class="code-highlight">{{ selectedType }}@if(scope.trim()){({{ scope.trim() }})}</span><span class="code-base">: {{ subject }}"</span>
+      </code>
 
       <button class="copy-btn" (click)="copyToClipboard()">
         Copiar comando
