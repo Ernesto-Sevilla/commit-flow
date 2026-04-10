@@ -5,12 +5,17 @@ $accent-color: #3fb950;
 $border-color: #444;
 $code-param-color: #d63384;
 
+/* Global Reset: Consistent box sizing across the app */
+*,
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
 /* --- Main Container Styles --- */
 .commit-editor {
 
   /* Box-sizing is set to border-box to include padding in width calculations */
-  box-sizing: border-box;
-
   max-width: 600px;
   margin: 40px auto;
   padding: 30px;
