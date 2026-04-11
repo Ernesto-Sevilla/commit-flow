@@ -3,11 +3,19 @@
 
   <div class="field">
     <label for="type">Tipo de cambio:</label>
-    <select id="type" (change)="onTypeChange($event)">
-      @for (type of commitTypes; track type){
-      <option [value]="type">{{ type }}</option>
+    <select id="type" [(ngModel)]="selectedType" (change)="onTypesChange()">
+      <option value="" disabled selected>Selecciona un tipo...</option>
+      
+      @for (t of commitTypes; track t.value){
+      <option [value]="t.value">{{ t.label }}</option>
       }
     </select>
+
+    @if (selectedTypeObject){
+      <div class="type-help">
+        <p>{{ selectedTypeObject.description }}</p>
+      </div>
+    }
   </div>
 
   <div class="field">
