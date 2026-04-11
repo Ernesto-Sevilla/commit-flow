@@ -33,11 +33,51 @@
     <input type="text" id="subject" placeholder="Ej: add login validation" (input)="onSubjectChange($event)">
   </div>
 
+  <div class="options-container">
+    <button type="button" (click)="toggleDetailMode()" class="btn-toggle">
+      {{ isDetailMode ? '🌟 Modo Simple' : '➕ Añadir Body y Footer' }}
+    </button>
+  </div>
+
+  @if (isDetailMode) {
+    <div class="detailed-fields" appearance="fade">
+
+      <div class="input-group">
+        <label for="body">Cuerpo (Motivación del  cambio):</label>
+        <textarea
+          id="body"
+          [(ngModel)]="body"
+          placeholder="Explica el 'por qué' de este cambio..."
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="footer">Footer (Issues o Breaking Changes):</label>
+        <input
+          type="text"
+          id="footer"
+          [(ngModel)]="footer"
+          placeholder="Ej: Closes #10 o BREAKING CHANGE: ...">
+      </div>
+    </div>
+  }
+
   <div class="field preview-container">
     <div class="preview">
       <h3>Vista Previa:</h3>
       <code>
         <span class="code-base">git commit -m "</span><span class="code-highlight">{{ selectedType }}@if(scope.trim()){({{ scope.trim() }})}</span><span class="code-base">: {{ subject }}"</span>
+
+        @if (isDetailMode && body.trim()) {
+          <br>
+          <span class="code-base"> -m "{{ body.trim() }}</span>
+        }
+
+        @if (isDetailMode && footer.trim()) {
+          <br>
+          <span class="code-base"> -m "{{ footer.trim() }}</span>
+        }
       </code>
 
       <button class="copy-btn" (click)="copyToClipboard()">
