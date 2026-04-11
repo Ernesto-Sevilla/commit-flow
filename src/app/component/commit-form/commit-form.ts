@@ -24,13 +24,14 @@ export class CommitForm {
 
   // Holds the user-provide commit description
   subject: string = '';
-
   scope: string = '';
-
   // Default commit type based on Conventional Commits standard
   selectedType: string = 'feat';
-
   selectedTypeObject: CommitType | null = null;
+  body: string = '';
+  footer: string = '';
+
+  isDetailMode: boolean = false;
 
   // List of available commit types for the selector
   commitTypes: CommitType[] = [
@@ -55,6 +56,15 @@ export class CommitForm {
     const found = this.commitTypes.find(t => t.value === this.selectedType);
 
     this.selectedTypeObject = found || null;
+  }
+
+  toggleDetailMode(): void {
+    this.isDetailMode = !this.isDetailMode;
+
+    if(!this.isDetailMode){
+      this.body = '';
+      this.footer = '';
+    }
   }
 
   get fullComand(): string {
