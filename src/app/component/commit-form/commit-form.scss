@@ -73,6 +73,21 @@ $code-param-color: #d63384;
     }
   }
 
+  .type-help {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: rgba(201, 160, 78, 0.05); // Fondo sutil
+    border-left: 3px solid #c9a04e; // El borde dorado que elegimos
+    border-radius: 4px;
+  
+    p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: #bbb;
+      font-style: italic;
+    }
+  }
+
   .preview {
     margin-top: 40px;
     padding: 20px;
