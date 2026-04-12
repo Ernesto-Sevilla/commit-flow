@@ -66,17 +66,15 @@
   <div class="field preview-container">
     <div class="preview">
       <h3>Vista Previa:</h3>
-      <code>
+      <code class="terminal-style">
         <span class="code-base">git commit -m "</span><span class="code-highlight">{{ selectedType }}@if(scope.trim()){({{ scope.trim() }})}</span><span class="code-base">: {{ subject }}"</span>
 
         @if (isDetailMode && body.trim()) {
-          <br>
-          <span class="code-base"> -m "{{ body.trim() }}</span>
+          <div class="code-block"> -m "{{ body.trim() }}"</div>
         }
 
         @if (isDetailMode && footer.trim()) {
-          <br>
-          <span class="code-base"> -m "{{ footer.trim() }}</span>
+          <div class="code-block"> -m "{{ footer.trim() }}"</div>
         }
       </code>
 

@@ -141,6 +141,21 @@ $code-param-color: #d63384;
     }
   }
 
+  .terminal-style {
+    display: block;
+    white-space: pre-wrap; /* ¡ESTO ES LO MÁS IMPORTANTE! */
+    word-break: break-all;
+    background: #000;
+    padding: 15px;
+    border-radius: 5px;
+    color: #ccc;
+  }
+
+  .code-block {
+    margin-top: 5px; /* Separa visualmente cada flag -m */
+    color: #ffd700;  /* Un color diferente para que se note que es un extra */
+  }
+
   .preview {
     margin-top: 40px;
     padding: 20px;
