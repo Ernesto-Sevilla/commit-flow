@@ -67,15 +67,20 @@ export class CommitForm {
     }
   }
 
-  get fullComand(): string {
-    const scopePart = this.scope.trim() ? `(${this.scope.trim()})` : '';
-    return  `git commit -m "${this.selectedType}${scopePart}: ${this.subject}"`;
-  }
-
   copyToClipboard(): void {
+
+    let fullComand = `git commit -m "${this.selectedType}${this.scope.trim() ? '(' + this.scope.trim() + ')' : ''}: ${this.subject.trim()}"`;
+
+    if (this.isDetailMode && this.body.trim()) {
+      fullComand += ` -m "${this.body.trim()}"`;
+    }
+
+    if (this.isDetailMode && this.footer.trim()) {
+      fullComand += ` -m "${this.footer.trim()}"`;
+    }
   
-    navigator.clipboard.writeText(this.fullComand).then(() => {
-      console.log("Command copied to clipboard");
+    navigator.clipboard.writeText(fullComand).then(() => {
+      console.log("Command copied to clipboard", fullComand);
       alert("¡Copiado al portapapeles");
     }).catch(err => {
       console.error("Could not copy text: ", err);
