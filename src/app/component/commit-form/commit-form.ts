@@ -24,13 +24,14 @@ export class CommitForm {
 
   // Holds the user-provide commit description
   subject: string = '';
-
   scope: string = '';
-
   // Default commit type based on Conventional Commits standard
   selectedType: string = 'feat';
-
   selectedTypeObject: CommitType | null = null;
+  body: string = '';
+  footer: string = '';
+
+  isDetailMode: boolean = false;
 
   // List of available commit types for the selector
   commitTypes: CommitType[] = [
@@ -57,15 +58,29 @@ export class CommitForm {
     this.selectedTypeObject = found || null;
   }
 
-  get fullComand(): string {
-    const scopePart = this.scope.trim() ? `(${this.scope.trim()})` : '';
-    return  `git commit -m "${this.selectedType}${scopePart}: ${this.subject}"`;
+  toggleDetailMode(): void {
+    this.isDetailMode = !this.isDetailMode;
+
+    if(!this.isDetailMode){
+      this.body = '';
+      this.footer = '';
+    }
   }
 
   copyToClipboard(): void {
+
+    let fullComand = `git commit -m "${this.selectedType}${this.scope.trim() ? '(' + this.scope.trim() + ')' : ''}: ${this.subject.trim()}"`;
+
+    if (this.isDetailMode && this.body.trim()) {
+      fullComand += ` -m "${this.body.trim()}"`;
+    }
+
+    if (this.isDetailMode && this.footer.trim()) {
+      fullComand += ` -m "${this.footer.trim()}"`;
+    }
   
-    navigator.clipboard.writeText(this.fullComand).then(() => {
-      console.log("Command copied to clipboard");
+    navigator.clipboard.writeText(fullComand).then(() => {
+      console.log("Command copied to clipboard", fullComand);
       alert("¡Copiado al portapapeles");
     }).catch(err => {
       console.error("Could not copy text: ", err);
