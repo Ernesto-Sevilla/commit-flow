@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 
+import { CommitPreview } from './components/commit-preview/commit-preview';
+
 /**
  * Main editor component for CommitFlow.
  * Handles user input and formats it into a Conventional Commit message.
- */
+ */ 
 
   interface CommitType {
     value: string;
@@ -15,7 +17,7 @@ import { NgIf } from "../../../../node_modules/@angular/common/types/_common_mod
 
 @Component({
   selector: 'app-commit-form',
-  imports: [FormsModule],
+  imports: [FormsModule, CommitPreview],
   templateUrl: './commit-form.html',
   styleUrl: './commit-form.scss',
 })
@@ -65,26 +67,6 @@ export class CommitForm {
       this.body = '';
       this.footer = '';
     }
-  }
-
-  copyToClipboard(): void {
-
-    let fullComand = `git commit -m "${this.selectedType}${this.scope.trim() ? '(' + this.scope.trim() + ')' : ''}: ${this.subject.trim()}"`;
-
-    if (this.isDetailMode && this.body.trim()) {
-      fullComand += ` -m "${this.body.trim()}"`;
-    }
-
-    if (this.isDetailMode && this.footer.trim()) {
-      fullComand += ` -m "${this.footer.trim()}"`;
-    }
-  
-    navigator.clipboard.writeText(fullComand).then(() => {
-      console.log("Command copied to clipboard", fullComand);
-      alert("¡Copiado al portapapeles");
-    }).catch(err => {
-      console.error("Could not copy text: ", err);
-    })
   }
 }
 
