@@ -1,37 +1,75 @@
 @use '../../../../../styles/variables' as *;
 
 .field {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 650;
-      font-size: 0.9rem;
-      color: #dddddd;
-    }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 650;
+    font-size: 0.9rem;
+    color: #dddddd;
+  }
 
-    /* --- Interactive Element --- */
-    input,
-    select {
-      width: 100%;
-      padding: 12px 14px;
-      background-color: #161b22 !important;
-      border: 1px solid #03363d;
-      border-radius: 8px;
-      color: white !important;
-      font-size: 1rem;
-      transition: $border-color 0.3s, box-shadow 0.3s;
+  /* --- Interactive Element --- */
+  input,
+  select {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: #161b22 !important;
+    border: 1px solid #03363d;
+    border-radius: 8px;
+    color: white !important;
+    font-size: 1rem;
+    transition: $border-color 0.3s, box-shadow 0.3s;
 
-      &:focus {
-        outline: none;
-        border-color: #ffffff !important;
-        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5) !important;
-      }
-    }
-
-    select {
-      appearance: none;
-      cursor: pointer;
+    &:focus {
+      outline: none;
+      border-color: #ffffff !important;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5) !important;
     }
   }
+
+  select {
+    appearance: none;
+    cursor: pointer;
+  }
+}
+
+.field {
+  padding-left: 15px; // Espacio para que el borde no pegue con el texto
+  border-left: 4px solid transparent; // Borde invisible por defecto
+  transition: border-color 0.3s ease;
+
+  &.field-type {
+    border-left-color: $color-type;
+  }
+
+  &.field-scope {
+    border-left-color: $color-scope;
+  }
+
+  &.field-subject {
+    border-left-color: $color-subject;
+  }
+
+  // Opcional: Que el input brille con su color al hacer foco
+  input:focus,
+  select:focus {
+    &.field-type & {
+      border-color: $color-type !important;
+    }
+
+    &.field-scope & {
+      border-color: $color-scope !important;
+    }
+
+    &.field-subject & {
+      border-color: $color-subject !important;
+    }
+  }
+}
+
+.type-help {
+  border-left-color: $color-type; // Combinamos el color de la ayuda con el tipo
+}
