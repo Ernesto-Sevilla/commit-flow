@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommitForm } from "./component/commit-form/commit-form";
+import { CommitForm } from "./features/commit-form/commit-form";
 
 @Component({
   selector: 'app-root',

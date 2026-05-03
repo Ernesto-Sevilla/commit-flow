@@ -1,0 +1,61 @@
+@use '../../../../../styles/variables' as *;
+
+.preview {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    border-left: 4px solid $accent-color;
+    backdrop-filter: blur(5px);
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #dedede;
+    }
+
+    code {
+      display: block;
+      font-family: 'Fira Code', 'Courier New', 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+      color: $accent-color;
+      word-wrap: break-word;
+      background: #111;
+      padding: 15px;
+      border-radius: 4px;
+
+      .code-base {
+        color: #2aff31;
+      }
+
+      .code-highlight {
+        color: #c9a04e; // Un cian relajante que resalta sin molestar
+        font-weight: 500;
+      }
+    }
+  }
+
+  .copy-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #0d1117; // El fondo oscuro de tu app
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.98); // Efecto de "clic" físico
+    }
+  }

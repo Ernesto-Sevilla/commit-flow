@@ -1,0 +1,30 @@
+<div class="options-container">
+  <button type="button" (click)="onToggle()" class="btn-toggle">
+    {{ isDetailMode ? '🌟 Modo Simple' : '➕ Añadir Body y Footer' }}
+  </button>
+</div>
+
+@if (isDetailMode) {
+  <div class="detailed-fields">
+    <div class="input-group">
+      <label for="body">Cuerpo (Motivación del cambio):</label>
+      <textarea
+        id="body"
+        [ngModel]="body"
+        (ngModelChange)="onBodyInput($event)"
+        placeholder="Explica el 'por qué' de este cambio..."
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="input-group">
+      <label for="footer">Footer (Issues o Breaking Changes):</label>
+      <input
+        type="text"
+        id="footer"
+        [ngModel]="footer"
+        (ngModelChange)="onFooterInput($event)"
+        placeholder="Ej: Closes #10 o BREAKING CHANGE: ...">
+    </div>
+  </div>
+}

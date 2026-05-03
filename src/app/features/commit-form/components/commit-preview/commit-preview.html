@@ -1,0 +1,20 @@
+<div class="field preview-container">
+    <div class="preview">
+      <h3>Vista Previa:</h3>
+      <code class="terminal-style">
+        <span class="code-base">git commit -m "</span><span class="code-highlight">{{ type }}@if(scope.trim()){({{ scope.trim() }})}</span><span class="code-base">: {{ subject }}"</span>
+
+        @if (isDetailMode && body.trim()) {
+          <div class="code-block"> -m "{{ body.trim() }}"</div>
+        }
+
+        @if (isDetailMode && footer.trim()) {
+          <div class="code-block"> -m "{{ footer.trim() }}"</div>
+        }
+      </code>
+
+      <button class="copy-btn" (click)="copyToClipboard()">
+        Copiar comando
+      </button>
+    </div>
+</div>

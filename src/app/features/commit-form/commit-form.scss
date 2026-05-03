@@ -1,0 +1,33 @@
+@use '../../../styles/variables' as *;
+/* Global Reset: Consistent box sizing across the app */
+*,
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+/* --- Main Container Styles --- */
+.commit-editor {
+
+  /* Box-sizing is set to border-box to include padding in width calculations */
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+
+  background-color: #0d1117;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  color: #c9d1d9;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  h2 {
+    color: #ffffff;
+    text-align: center;
+    color: $accent-color;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+  }
+}

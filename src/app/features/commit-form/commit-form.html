@@ -1,0 +1,20 @@
+<section class="commit-editor">
+  <h2>CommitFlow Editor</h2>
+
+  <app-commit-header 
+    [selectedType]="selectedType" 
+    [scope]="scope" 
+    [subject]="subject"
+    (typeChange)="selectedType = $event"
+    (scopeChange)="scope = $event"
+    (subjectChange)="subject = $event">
+  </app-commit-header>
+
+  <app-commit-details [isDetailMode]="isDetailMode" [body]="body" [footer]="footer" (toggleMode)="toggleDetailMode()"
+    (bodyChange)="body = $event" (footerChange)="footer = $event">
+  </app-commit-details>
+
+  <app-commit-preview [type]="selectedType" [scope]="scope" [subject]="subject" [body]="body" [footer]="footer"
+    [isDetailMode]="isDetailMode">
+  </app-commit-preview>
+</section>
