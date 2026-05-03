@@ -5,27 +5,22 @@
     <label for="type">Tipo de cambio:</label>
     <select id="type" [(ngModel)]="selectedType" (change)="onTypesChange()">
       <option value="" disabled selected>Selecciona un tipo...</option>
-      
+
       @for (t of commitTypes; track t.value){
       <option [value]="t.value">{{ t.label }}</option>
       }
     </select>
 
     @if (selectedTypeObject){
-      <div class="type-help">
-        <p>{{ selectedTypeObject.description }}</p>
-      </div>
+    <div class="type-help">
+      <p>{{ selectedTypeObject.description }}</p>
+    </div>
     }
   </div>
 
   <div class="field">
     <label for="scope">Scope (Optional module):</label>
-    <input 
-      type="text" 
-      id="scope" 
-      [(ngModel)]="scope" 
-      placeholder="e.g., auth, ui, api..."
-    >
+    <input type="text" id="scope" [(ngModel)]="scope" placeholder="e.g., auth, ui, api...">
   </div>
 
   <div class="field">
@@ -33,42 +28,11 @@
     <input type="text" id="subject" placeholder="Ej: add login validation" (input)="onSubjectChange($event)">
   </div>
 
-  <div class="options-container">
-    <button type="button" (click)="toggleDetailMode()" class="btn-toggle">
-      {{ isDetailMode ? '🌟 Modo Simple' : '➕ Añadir Body y Footer' }}
-    </button>
-  </div>
+  <app-commit-details [isDetailMode]="isDetailMode" [body]="body" [footer]="footer" (toggleMode)="toggleDetailMode()"
+    (bodyChange)="body = $event" (footerChange)="footer = $event">
+  </app-commit-details>
 
-  @if (isDetailMode) {
-    <div class="detailed-fields" appearance="fade">
-
-      <div class="input-group">
-        <label for="body">Cuerpo (Motivación del  cambio):</label>
-        <textarea
-          id="body"
-          [(ngModel)]="body"
-          placeholder="Explica el 'por qué' de este cambio..."
-          rows="3"
-        ></textarea>
-      </div>
-
-      <div class="input-group">
-        <label for="footer">Footer (Issues o Breaking Changes):</label>
-        <input
-          type="text"
-          id="footer"
-          [(ngModel)]="footer"
-          placeholder="Ej: Closes #10 o BREAKING CHANGE: ...">
-      </div>
-    </div>
-  }
-
-  <app-commit-preview 
-    [type]="selectedType" 
-    [scope]="scope" 
-    [subject]="subject" 
-    [body]="body" 
-    [footer]="footer" 
+  <app-commit-preview [type]="selectedType" [scope]="scope" [subject]="subject" [body]="body" [footer]="footer"
     [isDetailMode]="isDetailMode">
   </app-commit-preview>
 </section>

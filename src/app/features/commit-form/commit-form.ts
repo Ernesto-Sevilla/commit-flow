@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { NgIf } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 
 import { CommitPreview } from './components/commit-preview/commit-preview';
+import { CommitDetails } from './components/commit-details/commit-details';
 
 /**
  * Main editor component for CommitFlow.
@@ -17,7 +18,7 @@ import { CommitPreview } from './components/commit-preview/commit-preview';
 
 @Component({
   selector: 'app-commit-form',
-  imports: [FormsModule, CommitPreview],
+  imports: [FormsModule, CommitPreview, CommitDetails],
   templateUrl: './commit-form.html',
   styleUrl: './commit-form.scss',
 })
