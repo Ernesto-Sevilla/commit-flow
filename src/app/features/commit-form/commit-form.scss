@@ -1,7 +1,8 @@
 @use '../../../styles/variables' as *;
+
 /* Global Reset: Consistent box sizing across the app */
 *,
-*::before, 
+*::before,
 *::after {
   box-sizing: border-box;
 }
@@ -29,5 +30,44 @@
     color: $accent-color;
     margin-bottom: 30px;
     font-size: 1.8rem;
+  }
+
+  .github-link-container {
+    display: flex;
+    justify-content: center; // O 'flex-end' si lo quieres a la derecha
+    margin-bottom: 20px;
+  }
+
+  .github-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+
+    background-color: #161b22;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    border: 1px solid #30363d;
+    border-radius: 20px; // Estilo "píldora" que es muy moderno
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #21262d;
+      border-color: #8b949e;
+      color: #ffffff;
+      transform: translateY(-2px); // Pequeño salto hacia arriba
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: rotate(10deg) scale(1.1); // El icono gira un poco al pasar el mouse
+    }
   }
 }
