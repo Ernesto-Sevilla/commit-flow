@@ -5,8 +5,10 @@
 </div>
 
 @if (isDetailMode) {
+  
   <div class="detailed-fields">
-    <div class="input-group">
+    
+    <div class="input-group group-body">
       <label for="body">Cuerpo (Motivación del cambio):</label>
       <textarea
         id="body"
@@ -17,7 +19,7 @@
       ></textarea>
     </div>
 
-    <div class="input-group">
+    <div class="input-group group-footer">
       <label for="footer">Footer (Issues o Breaking Changes):</label>
       <input
         type="text"
@@ -26,5 +28,6 @@
         (ngModelChange)="onFooterInput($event)"
         placeholder="Ej: Closes #10 o BREAKING CHANGE: ...">
     </div>
+
   </div>
 }

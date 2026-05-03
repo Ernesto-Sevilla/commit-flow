@@ -1,4 +1,4 @@
-<div class="field">
+<div class="field field-type">
   <label for="type">Tipo de cambio:</label>
   <select id="type" [ngModel]="selectedType" (ngModelChange)="onTypeChange($event)">
     <option value="" disabled>Selecciona un tipo...</option>
@@ -14,13 +14,13 @@
   }
 </div>
 
-<div class="field">
+<div class="field field-scope">
   <label for="scope">Scope (Optional module):</label>
   <input type="text" id="scope" [ngModel]="scope" (ngModelChange)="scopeChange.emit($event)"
     placeholder="e.g., auth, ui, api...">
 </div>
 
-<div class="field">
+<div class="field field-subject">
   <label for="subject">Asunto del Commit:</label>
   <input type="text" id="subject" [ngModel]="subject" (ngModelChange)="subjectChange.emit($event)"
     placeholder="Ej: add login validation">

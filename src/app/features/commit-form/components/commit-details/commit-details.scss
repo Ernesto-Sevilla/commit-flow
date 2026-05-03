@@ -1,3 +1,5 @@
+@use '../../../../../styles/variables' as *;
+
 .options-container {
   margin: 1rem 0;
   display: flex;
@@ -23,12 +25,43 @@
 .detailed-fields {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1rem;
   background: #1e1e1e;
   border-radius: 8px;
-  border-left: 3px solid #ffd700;
   margin-bottom: 1rem;
+  /* Eliminamos el border-left amarillo global para usar los específicos abajo */
+}
+
+.input-group {
+  padding-left: 12px;
+  border-left: 4px solid transparent; // Borde base grueso
+  transition: border-color 0.3s ease;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ddd;
+  }
+
+  // Lógica de colores semánticos
+  &.group-body {
+    border-left-color: $color-body;
+
+    textarea:focus {
+      border-color: $color-body !important;
+    }
+  }
+
+  &.group-footer {
+    border-left-color: $color-footer;
+
+    input:focus {
+      border-color: $color-footer !important;
+    }
+  }
 }
 
 textarea,
@@ -37,49 +70,17 @@ input[type="text"]#footer {
   background: #252525;
   color: white;
   border: 1px solid #444;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 6px;
   font-family: 'Consolas', monospace;
+  transition: all 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: #ffd700;
+    background: #2d2d2d;
   }
 }
 
 textarea {
   resize: vertical;
-}
-
-.type-help {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: rgba(201, 160, 78, 0.05);
-  border-left: 3px solid #c9a04e;
-  border-radius: 4px;
-
-  p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #bbb;
-    font-style: italic;
-  }
-}
-
-.terminal-style {
-  display: block;
-  white-space: pre-wrap;
-  /* ¡ESTO ES LO MÁS IMPORTANTE! */
-  word-break: break-all;
-  background: #000;
-  padding: 15px;
-  border-radius: 5px;
-  color: #ccc;
-}
-
-.code-block {
-  margin-top: 5px;
-  /* Separa visualmente cada flag -m */
-  color: #ffd700;
-  /* Un color diferente para que se note que es un extra */
 }
