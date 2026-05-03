@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { CommitPreview } from './components/commit-preview/commit-preview';
 import { CommitDetails } from './components/commit-details/commit-details';
@@ -18,12 +19,18 @@ import { CommitHeader } from './components/commit-header/commit-header';
 
 @Component({
   selector: 'app-commit-form',
-  imports: [FormsModule, CommitPreview, CommitDetails, CommitHeader],
+  imports: [TranslateModule, FormsModule, CommitPreview, CommitDetails, CommitHeader],
   templateUrl: './commit-form.html',
   styleUrl: './commit-form.scss',
 })
 
 export class CommitForm {
+
+  public translate = inject(TranslateService);
+
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+  }
 
   subject: string = '';
   scope: string = '';

@@ -11,16 +11,4 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class App {
   protected readonly title = signal('commit-flow');
-
-  private translate = inject(TranslateService);
-
-  constructor() {
-    this.translate.setDefaultLang('en');
-    const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang?.match(/en|es/) ? browserLang : 'en');
-  }
-
-  switchLanguage(lang: string) {
-    this.translate.use(lang);
-  }
 }
