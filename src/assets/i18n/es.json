@@ -1,0 +1,10 @@
+{
+  "GENERAL": {
+    "TITLE": "Flujo de Commits",
+    "SUBTITLE": "Estandariza tus commits profesionalmente"
+  },
+  "FORM": {
+    "TYPE": "Selecciona el tipo",
+    "MESSAGE": "Mensaje del commit"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "GENERAL": {
+    "TITLE": "Commit Flow",
+    "SUBTITLE": "Standardize your commits professionally"
+  },
+  "FORM": {
+    "TYPE": "Select type",
+    "MESSAGE": "Commit message"
+  }
+}

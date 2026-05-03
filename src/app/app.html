@@ -1,4 +1,10 @@
 <main>
   <app-commit-form></app-commit-form>
+
+  <div class="lang-buttons">
+    <button (click)="switchLanguage('es')">🇲🇽 Español</button>
+    <button (click)="switchLanguage('en')">🇺🇸 English</button>
+  </div>
+  
   <router-outlet></router-outlet>
 </main>
