@@ -15,18 +15,34 @@ export class CommitPreview {
   @Input() footer: string = '';
   @Input() isDetailMode: boolean = false;
 
+  private sanitize(text: string): string {
+    if (!text) return '';
+    // Replace all double quotes ("") with single quotes (')
+    // This prevents the Git command from breaking in the terminal.
+    return text.trim().replace(/"/g, "'");
+  }
+
   copyToClipboard(): void {
-    let fullCommand = `git commit -m "${this.type}${this.scope.trim() ? '(' + this.scope.trim() + ')' : ''}: ${this.subject.trim()}"`;
+    const cleanType = this.sanitize(this.type);
+    const cleanScope = this.sanitize(this.scope);
+    const cleanSubject = this.sanitize(this.subject);
+    const cleanBody = this.sanitize(this.body);
+    const cleanFooter = this.sanitize(this.footer);
 
-    if (this.isDetailMode && this.body.trim()) {
-      fullCommand += ` -m "${this.body.trim()}"`;
-    }
+    const scopePart = cleanScope ? `(${cleanScope})` : '';
+    let fullCommand = `git commit -m "${cleanType}${scopePart}: ${cleanSubject}"`;
 
-    if (this.isDetailMode && this.footer.trim()) {
-      fullCommand += ` -m "${this.footer.trim()}"`;
+    if (this.isDetailMode) {
+      if (cleanBody) {
+        fullCommand += ` -m "${cleanBody}"`;
+      }
+      if (cleanFooter) {
+        fullCommand += ` -m "${cleanFooter}"`;
+      }
     }
 
     navigator.clipboard.writeText(fullCommand).then(() => {
+      console.log('Comando generado:', fullCommand);
       alert("¡Comando copiado con éxito! 🚀");
     });
   }
