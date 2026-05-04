@@ -61,5 +61,11 @@
       "LABEL": "Footer (Metadata & References):",
       "PLACEHOLDER": "Reference issues (e.g., Closes #123) or breaking change notices..."
     }
+  },
+  "PREVIEW": {
+    "TITLE": "Command Preview:",
+    "COPY_BUTTON": "Copy command",
+    "COPY_SUCCESS": "Copied!",
+    "TERMINAL_HINT": "Copy and paste this command into your terminal to apply the changes."
   }
 }

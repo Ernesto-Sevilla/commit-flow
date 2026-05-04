@@ -61,5 +61,11 @@
       "LABEL": "Pie de Página (Metadatos y Referencias):",
       "PLACEHOLDER": "Referencia a Issues (ej: Closes #123) o avisos de cambios..."
     }
+  },
+  "PREVIEW": {
+    "TITLE": "Vista Previa del Comando:",
+    "COPY_BUTTON": "Copiar comando",
+    "COPY_SUCCESS": "¡Copiado!",
+    "TERMINAL_HINT": "Copia y pega este comando en tu terminal para aplicar los cambios."
   }
 }

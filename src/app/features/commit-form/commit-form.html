@@ -31,6 +31,8 @@
   </app-commit-details>
 
   <app-commit-preview [type]="selectedType" [scope]="scope" [subject]="subject" [body]="body" [footer]="footer"
-    [isDetailMode]="isDetailMode">
+    [isDetailMode]="isDetailMode"
+    [copySuccessMsg]="'PREVIEW.COPY_SUCCESS' | translate"
+    >
   </app-commit-preview>
 </section>

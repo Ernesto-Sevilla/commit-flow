@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-commit-preview',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './commit-preview.html',
   styleUrl: './commit-preview.scss',
 })
@@ -14,6 +15,7 @@ export class CommitPreview {
   @Input() body: string = '';
   @Input() footer: string = '';
   @Input() isDetailMode: boolean = false;
+  @Input() copySuccessMsg: string = '';
 
   private sanitize(text: string): string {
     if (!text) return '';
@@ -42,8 +44,7 @@ export class CommitPreview {
     }
 
     navigator.clipboard.writeText(fullCommand).then(() => {
-      console.log('Comando generado:', fullCommand);
-      alert("¡Comando copiado con éxito! 🚀");
+      alert(this.copySuccessMsg);
     });
   }
 }
