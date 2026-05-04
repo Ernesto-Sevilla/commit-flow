@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-commit-details',
-  imports: [FormsModule],
+  imports: [TranslateModule, FormsModule],
   templateUrl: './commit-details.html',
   styleUrl: './commit-details.scss',
 })
