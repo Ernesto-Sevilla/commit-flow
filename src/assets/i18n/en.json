@@ -1,7 +1,8 @@
 {
   "GENERAL": {
     "TITLE": "Commit Flow",
-    "SUBTITLE": "Standardize your commits professionally"
+    "SUBTITLE": "Standardize your commits professionally",
+    "I18N_NOTICE": "Browser translation disabled to ensure commit data integrity."
   },
   "FORM": {
     "TYPE": "Select type",

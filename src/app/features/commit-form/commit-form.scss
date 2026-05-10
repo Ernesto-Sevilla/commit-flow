@@ -24,6 +24,17 @@
     margin-bottom: 30px;
     border-bottom: 1px solid #30363d;
     padding-bottom: 20px;
+    flex-wrap: wrap;
+
+    .i18n-notice {
+      width: 100%; 
+      text-align: center;
+      margin: 15px 0 0 0; 
+      color: #8b949e;
+      font-style: italic;
+      opacity: 0.8;
+      letter-spacing: 0.3px;
+    }
 
     // Repartimos el espacio en 3 columnas iguales
     .header-left,

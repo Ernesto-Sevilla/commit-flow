@@ -1,7 +1,8 @@
 {
   "GENERAL": {
     "TITLE": "Flujo de Commits",
-    "SUBTITLE": "Estandariza tus commits profesionalmente"
+    "SUBTITLE": "Estandariza tus commits profesionalmente",
+    "I18N_NOTICE": "Traducción del navegador desactivada para garantizar la integridad del commit."
   },
   "FORM": {
     "TYPE": "Selecciona el tipo",
