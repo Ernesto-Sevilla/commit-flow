@@ -1,27 +1,43 @@
 <div class="field field-type">
-  <label for="type">Tipo de cambio:</label>
+  <label for="type">
+    {{ 'HEADER.TYPE_LABEL' | translate }}
+  </label>
   <select id="type" [ngModel]="selectedType" (ngModelChange)="onTypeChange($event)">
-    <option value="" disabled>Selecciona un tipo...</option>
+    <option value="" disabled>
+      {{'HEADER.TYPE_PLACEHOLDER' | translate }}
+    </option>
+
     @for (t of commitTypes; track t.value){
-    <option [value]="t.value">{{ t.label }}</option>
+    <option [value]="t.value">
+      {{ 'HEADER.TYPES.' + (t.value | uppercase) + '.LABEL' | translate}}
+    </option>
     }
   </select>
 
   @if (selectedTypeObject){
   <div class="type-help">
-    <p>{{ selectedTypeObject.description }}</p>
+    <p>{{ 'HEADER.TYPES.' + (selectedTypeObject.value | uppercase) + '.DESC' | translate }}</p>
   </div>
   }
 </div>
 
 <div class="field field-scope">
-  <label for="scope">Scope (Optional module):</label>
-  <input type="text" id="scope" [ngModel]="scope" (ngModelChange)="scopeChange.emit($event)"
-    placeholder="e.g., auth, ui, api...">
+  <label for="scope">
+    {{'HEADER.SCOPE_LABEL' | translate}}
+  </label>
+
+  <input type="text" id="scope" [ngModel]="scope" (ngModelChange)="scopeChange.emit($event)">
 </div>
 
 <div class="field field-subject">
-  <label for="subject">Asunto del Commit:</label>
-  <input type="text" id="subject" [ngModel]="subject" (ngModelChange)="subjectChange.emit($event)"
-    placeholder="Ej: add login validation">
+
+  <label for="subject">
+    {{'HEADER.SUBJECT_LABEL' | translate}}
+  </label>
+
+  <input type="text" 
+    id="subject" 
+    [ngModel]="subject" 
+    (ngModelChange)="subjectChange.emit($event)"
+    [placeholder]="'HEADER.SUBJECT_PLACEHOLDER' | translate">
 </div>

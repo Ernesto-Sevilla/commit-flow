@@ -1,0 +1,72 @@
+{
+  "GENERAL": {
+    "TITLE": "Flujo de Commits",
+    "SUBTITLE": "Estandariza tus commits profesionalmente",
+    "I18N_NOTICE": "Traducción del navegador desactivada para garantizar la integridad del commit."
+  },
+  "FORM": {
+    "TYPE": "Selecciona el tipo",
+    "MESSAGE": "Mensaje del commit"
+  },
+  "HEADER": {
+    "TYPE_LABEL": "Tipo de cambio:",
+    "TYPE_PLACEHOLDER": "Selecciona un tipo...",
+    "SCOPE_LABEL": "Alcance (Módulo opcional):",
+    "SUBJECT_LABEL": "Asunto del Commit:",
+    "SUBJECT_PLACEHOLDER": "Ej: agregar validación de login",
+    "TYPES": {
+      "FEAT": {
+        "LABEL": "feat",
+        "DESC": "Añade una nueva funcionalidad al sistema o producto."
+      },
+      "FIX": {
+        "LABEL": "fix",
+        "DESC": "Resuelve un error, fallo técnico o comportamiento inesperado (bug)."
+      },
+      "DOCS": {
+        "LABEL": "docs",
+        "DESC": "Actualización o creación de documentación (README, comentarios, manuales)."
+      },
+      "STYLE": {
+        "LABEL": "style",
+        "DESC": "Ajustes de formato, estética o limpieza visual (espacios, comas) sin afectar la lógica."
+      },
+      "REFACTOR": {
+        "LABEL": "refactor",
+        "DESC": "Reestructuración del código existente para mejorar su legibilidad o diseño."
+      },
+      "PERF": {
+        "LABEL": "perf",
+        "DESC": "Optimización de código para mejorar el rendimiento, velocidad o consumo de recursos."
+      },
+      "TEST": {
+        "LABEL": "test",
+        "DESC": "Creación, actualización o corrección de pruebas unitarias o de integración."
+      },
+      "CHORE": {
+        "LABEL": "chore",
+        "DESC": "Tareas de mantenimiento, actualización de dependencias o configuración de herramientas."
+      }
+    }
+  },
+  "DETAILS": {
+    "BUTTON": {
+      "SIMPLE": "🌟 Vista Simplificada",
+      "ADVANCED": "➕ Expandir Detalles (Body/Footer)"
+    },
+    "BODY": {
+      "LABEL": "Cuerpo del Mensaje (Contexto y Justificación):",
+      "PLACEHOLDER": "Describe la motivación del cambio y el contraste con el comportamiento anterior..."
+    },
+    "FOOTER": {
+      "LABEL": "Pie de Página (Metadatos y Referencias):",
+      "PLACEHOLDER": "Referencia a Issues (ej: Closes #123) o avisos de cambios..."
+    }
+  },
+  "PREVIEW": {
+    "TITLE": "Vista Previa del Comando:",
+    "COPY_BUTTON": "Copiar comando",
+    "COPY_SUCCESS": "¡Copiado!",
+    "TERMINAL_HINT": "Copia y pega este comando en tu terminal para aplicar los cambios."
+  }
+}

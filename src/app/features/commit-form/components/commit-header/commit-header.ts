@@ -1,11 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommitType, COMMIT_TYPES } from '../../../../core/models/commit.model';
+import { TranslateModule } from '@ngx-translate/core';
+import { UpperCasePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-commit-header',
-  imports: [FormsModule],
+  imports: [TranslateModule, FormsModule, UpperCasePipe],
   templateUrl: './commit-header.html',
   styleUrl: './commit-header.scss',
 })

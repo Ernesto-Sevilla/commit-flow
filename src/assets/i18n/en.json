@@ -1,0 +1,72 @@
+{
+  "GENERAL": {
+    "TITLE": "Commit Flow",
+    "SUBTITLE": "Standardize your commits professionally",
+    "I18N_NOTICE": "Browser translation disabled to ensure commit data integrity."
+  },
+  "FORM": {
+    "TYPE": "Select type",
+    "MESSAGE": "Commit message"
+  },
+  "HEADER": {
+    "TYPE_LABEL": "Exchange rate:",
+    "TYPE_PLACEHOLDER": "Select a type...",
+    "SCOPE_LABEL": "Scope (Optional Module):",
+    "SUBJECT_LABEL": "Committee Subject:",
+    "SUBJECT_PLACEHOLDER": "Example: Add login validation",
+    "TYPES": {
+      "FEAT": {
+        "LABEL": "feat",
+        "DESC": "A new feature for the user or product functionality."
+      },
+      "FIX": {
+        "LABEL": "fix",
+        "DESC": "A bug fix for a technical issue or unexpected behavior."
+      },
+      "DOCS": {
+        "LABEL": "docs",
+        "DESC": "Documentation changes only (README, wiki, or code comments)."
+      },
+      "STYLE": {
+        "LABEL": "style",
+        "DESC": "Changes that do not affect the meaning of the code (white-space, formatting)."
+      },
+      "REFACTOR": {
+        "LABEL": "refactor",
+        "DESC": "A code change that neither fixes a bug nor adds a feature."
+      },
+      "PERF": {
+        "LABEL": "perf",
+        "DESC": "A code change that improves performance, speed, or efficiency."
+      },
+      "TEST": {
+        "LABEL": "test",
+        "DESC": "Adding missing tests or correcting existing test suites."
+      },
+      "CHORE": {
+        "LABEL": "chore",
+        "DESC": "Routine maintenance, tool configurations, or library updates."
+      }
+    }
+  },
+  "DETAILS": {
+    "BUTTON": {
+      "SIMPLE": "🌟 Simple View",
+      "ADVANCED": "➕ Expand Details (Body/Footer)"
+    },
+    "BODY": {
+      "LABEL": "Message Body (Context & Justification):",
+      "PLACEHOLDER": "Describe the motivation behind this change and contrast it with previous behavior..."
+    },
+    "FOOTER": {
+      "LABEL": "Footer (Metadata & References):",
+      "PLACEHOLDER": "Reference issues (e.g., Closes #123) or breaking change notices..."
+    }
+  },
+  "PREVIEW": {
+    "TITLE": "Command Preview:",
+    "COPY_BUTTON": "Copy command",
+    "COPY_SUCCESS": "Copied!",
+    "TERMINAL_HINT": "Copy and paste this command into your terminal to apply the changes."
+  }
+}

@@ -1,6 +1,6 @@
 <div class="field preview-container">
   <div class="preview">
-    <h3>Vista Previa:</h3>
+    <h3>{{ 'PREVIEW.TITLE' | translate }}</h3>
     <code class="terminal-style">
   <span class="code-base">git commit -m "</span>
   
@@ -21,8 +21,12 @@
   }
 </code>
 
+  <span class="terminal-hint">
+    <small>{{'PREVIEW.TERMINAL_HINT' | translate }}</small>
+  </span>
+
     <button class="copy-btn" (click)="copyToClipboard()">
-      Copiar comando
+      {{ 'PREVIEW.COPY_BUTTON' | translate }}
     </button>
   </div>
 </div>

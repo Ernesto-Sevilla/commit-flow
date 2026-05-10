@@ -1,6 +1,6 @@
 <div class="options-container">
   <button type="button" (click)="onToggle()" class="btn-toggle">
-    {{ isDetailMode ? '🌟 Modo Simple' : '➕ Añadir Body y Footer' }}
+    {{ (isDetailMode ? 'DETAILS.BUTTON.SIMPLE' : 'DETAILS.BUTTON.ADVANCED') | translate }}
   </button>
 </div>
 
@@ -9,24 +9,29 @@
   <div class="detailed-fields">
     
     <div class="input-group group-body">
-      <label for="body">Cuerpo (Motivación del cambio):</label>
+      <label for="body">
+        {{'DETAILS.BODY.LABEL' | translate}}
+      </label>
+
       <textarea
         id="body"
         [ngModel]="body"
         (ngModelChange)="onBodyInput($event)"
-        placeholder="Explica el 'por qué' de este cambio..."
+        [placeholder]="'DETAILS.BODY.PLACEHOLDER' | translate"
         rows="3"
       ></textarea>
     </div>
 
     <div class="input-group group-footer">
-      <label for="footer">Footer (Issues o Breaking Changes):</label>
+      <label for="footer">
+        {{'DETAILS.FOOTER.LABEL' | translate}}
+      </label>
       <input
         type="text"
         id="footer"
         [ngModel]="footer"
         (ngModelChange)="onFooterInput($event)"
-        placeholder="Ej: Closes #10 o BREAKING CHANGE: ...">
+        [placeholder]="'DETAILS.FOOTER.PLACEHOLDER' | translate">
     </div>
 
   </div>
