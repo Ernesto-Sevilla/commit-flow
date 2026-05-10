@@ -1,4 +1,12 @@
 <main>
-  <app-commit-form></app-commit-form>
+  <!-- 
+    CommitForm: Main feature component for commit generation.
+    [currentLang]: Synchronizes the local UI state with the global active language (Data Down).
+    (onLanguageChange): Handles the language switch event to update the application state (Actions Up).
+  -->
+  <app-commit-form
+  [currentLang]="activeLang"
+  (onLanguageChange)="switchLanguage($event)"
+  ></app-commit-form>
   <router-outlet></router-outlet>
 </main>
