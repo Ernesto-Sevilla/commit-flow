@@ -34,6 +34,11 @@
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
+  "overrides": {
+    "picomatch": "^4.0.4",
+    "undici": "^7.24.0",
+    "vite": "^7.3.2"
+  },
   "devDependencies": {
     "@angular/build": "^21.0.3",
     "@angular/cli": "^21.0.3",
