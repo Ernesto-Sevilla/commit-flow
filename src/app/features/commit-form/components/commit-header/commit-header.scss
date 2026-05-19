@@ -12,9 +12,13 @@
   }
 
   /* --- Interactive Element --- */
-  input,
+input,
   select {
-    width: 100%;
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    
     padding: 12px 14px;
     background-color: #161b22 !important;
     border: 1px solid #03363d;
